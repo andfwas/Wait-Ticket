@@ -1,3 +1,9 @@
 const db = require('./connection')
 
-module.exports = {}
+function getAllEvents(){
+  return db.select('*').from('events')
+}
+
+module.exports = {
+  getAllEvents
+}

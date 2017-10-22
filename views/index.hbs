@@ -6,6 +6,11 @@
   </head>
   <body>
     <h3>{{title}}</h3>
+    {{#each testData}}
+      <h3>{{this.title}}</h3>
+      <h4>{{this.sub_title}}</h4>
+      <p>{{this.zipcode}}</p>
+    {{/each}}
     <script src="/javascript/main.js" charset="utf-8"></script>
   </body>
 </html>
