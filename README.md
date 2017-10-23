@@ -54,5 +54,3 @@
 * Map integration location of venue
 * Social linking feature (view history of successful ticket exchanges p2p)
 * Event awareness
-
-geralle Josh
