@@ -1,5 +1,5 @@
 {
-  "name": "Wait-Ticket",
+  "name": "wait-ticket",
   "version": "1.0.0",
   "description": "* 1 member from your team will need to fork this repo and update this README file with your proposal. * Make sure to preview your proposal in a markdown preview and [use valid markdown syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/)   * Unformatted/unreadable proposals will be rejected",
   "main": "app.js",
@@ -13,7 +13,7 @@
   },
   "keywords": [],
   "author": "Free Ninety Nine",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/geralle/Wait-Ticket/issues"
   },
