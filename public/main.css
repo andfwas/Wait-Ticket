@@ -3,8 +3,17 @@ body {
   font-family: proxima-nova, sans-serif;
   font-style: normal;
   font-weight: 100;
+  color: #000000;
+}
+
+.navbar {
+  background-color: #2B3643;
   color: #EEF1F5;
 }
+
+
+
+
 
 @media screen and (min-width: 401px) and (max-width: 960px) {
   body {
