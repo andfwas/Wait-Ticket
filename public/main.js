@@ -16,7 +16,7 @@ form.addEventListener('change', (event) => {
 })
 
 getInfo = (id) => {
-    fetch(`http://waitticket.herokuapp.com/api/tickets/username/${id}`)
+    fetch(`https://waitticket.herokuapp.com/api/tickets/username/${id}`)
     .then((response) => {
         return response.json()
         .then((data) => {
