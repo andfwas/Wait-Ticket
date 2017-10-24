@@ -6,14 +6,16 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('users').insert([
         {
-          fname: 'john',
-          lname: 'doe',
-          email: 'johndoe@gmail.com'
+          name: 'john doe',
+          email: 'johndoe@gmail.com',
+          username: 'johndoe43',
+          password:'doeman'
         },
         {
-          fname: 'jane',
-          lname: 'doe',
-          email: 'janedoe@gmail.com'
+          name: 'jane doe',
+          email: 'janedoe@gmail.com',
+          username: 'janedoe43',
+          password: 'janewoman'
         }
       ]);
     });

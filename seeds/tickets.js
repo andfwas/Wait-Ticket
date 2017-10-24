@@ -6,14 +6,22 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('tickets').insert([
         {
-          code: 'kjfadkjfa',
-          zipcode: '80204',
-          ticket_id: '3456789'
+          event: 'Broncos Game',
+          date: '11-03-17',
+          time: '20:00:00',
+          venue: 'Invesco Field',
+          type: 'Sports',
+          pdf_link: 'www.fakepdf.com',
+          username: 'geebrown43'
         },
         {
-          code: 'iuspodfuioa',
-          zipcode: '80204',
-          ticket_id: '3456789'
+          event: 'J Cole Concert',
+          date: '01-10-18',
+          time: '18:00:00',
+          venue: 'Red Rocks Ampitheater',
+          type: 'Concert',
+          pdf_link: 'www.fakepdf.com',
+          username: 'geebrown43'
         }
       ]);
     });
