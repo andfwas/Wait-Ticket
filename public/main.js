@@ -24,3 +24,10 @@ getInfo = (id) => {
         })
     })
 }
+
+// MAP JS
+mapboxgl.accessToken = 'pk.eyJ1IjoiYW5kZndhcyIsImEiOiJjajk1dHc0am40bzY5MzNtYm0yMWx3emdmIn0.DrIhBUV9hbyQvinhBYlDFg';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/dark-v9'
+});
