@@ -1,5 +1,8 @@
 body {
   background-color: green;
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 100;
 }
 
 @media screen and (min-width: 480px) {
