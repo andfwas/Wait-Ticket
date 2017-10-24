@@ -3,7 +3,7 @@ body {
   font-family: proxima-nova, sans-serif;
   font-style: normal;
   font-weight: 100;
-  color: #EEF1F5;
+  /*color: #EEF1F5;*/
 }
 
 .navbar, a{
@@ -12,6 +12,14 @@ body {
 
 }
 
+#searchFormatting {
+  color: white;
+}
+
+#map {
+  width: 800px;
+  height: 600px;
+}
 
 @media screen and (min-width: 401px) and (max-width: 960px) {
   body {
