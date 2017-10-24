@@ -21,6 +21,11 @@ getInfo = (id) => {
         return response.json()
         .then((data) => {
             console.log(data)
+            // create new elements
+            var seachResult1 = document.getElementById('seachResult1')
+            var eventName = document.createElement('p')
+            eventName.innerText = data[0].event
+            seachResult1.append(eventName)
         })
     })
 }

@@ -14,7 +14,7 @@
 
 <body>
   <!-- BEGIN NAV -->
-  <nav class="navbar navbar-expand-lg text-white">
+  <nav class="navbar navbar-expand-lg">
   <a class="navbar-brand" href="#">waiTTicket</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -50,63 +50,76 @@
       </form>
     </div>
   </nav>
-
-
   <!-- END NAV -->
 
 
-  {{#each testData}}
-
-    <h3>{{this.title}}</h3>
-
-    <h4>{{this.sub_title}}</h4>
-
-    <p>{{this.zipcode}}</p>
-  {{/each}}
-
-<!-- START OF CARD -->
-
-<div class="card">
-    <div class="card-body">
 
 
+<!-- main image -->
+<div class="main-image">
+  <img src="concert.png" class="img-fluid" alt="confetti">
+</div>
 
-    <form action="/api/tickets" id="firstform" method="post">
-        <label>Event Title</label> <input class="form-control" id="event_title" name="event_title"> <label>Date</label> <input class="form-control" id="form_date" name="form_date"> <label>Time</label> <input class="form-control" id="form_time" name="form_time"> <label>Venue</label> <input class="form-control" id="form_venue" name="form_venue"> <select class="form-control" name="form_type">
-          <option value="Select Type">
-            Select type:
-          </option>
 
-          <option value="Music">
-              Music
-          </option>
+<!-- container with search results and map -->
+<div class="container">
+  <div id="seachResult1">
 
-          <option value="Sports">
-              Sports
-          </option>
+  </div>
 
-        </select> <label>Ticket Link</label> <input class="form-control" name="ticket_link"> <button class="btn btn-info btn-lg" id="submit-btn" type="submit">Submit</button>
-    </form>
-
+<div id='map' style='width: 400px; height: 300px;'></div>
 
 </div>
+
+<!-- START OF CARD -->
+<div class="card">
+  <div class="card-body">
+    <form action="/api/tickets" id="firstform" method="post">
+      <label>Event Title</label>
+      <input class="form-control" id="event_title" name="event"> <label>Date</label>
+      <input class="form-control" id="form_date" name="date">
+      <label>Time</label>
+      <input class="form-control" id="form_time" name="time"> <label>Venue</label>
+      <input class="form-control" id="form_venue" name="venue">
+      <select class="form-control" name="type">
+        <option value="Select Type">
+          Select type:
+        </option>
+        <option value="Music">
+            Music
+        </option>
+        <option value="Sports">
+            Sports
+        </option>
+      </select>
+      <label>Ticket Link</label>
+      <input class="form-control" name="pdf_link">
+      <button class="btn btn-info btn-lg" id="submit-btn" type="submit">Submit</button>
+    </form>
+  </div>
 </div>
 <!-- END OF CARD -->
 
 
 <!-- START OF 2nd CARD -->
 <div class="card">
-    <div class="card-body">
+  <div class="card-body">
 
-    <form id="secondform">
-        <label>Name</label> <input class="form-control" name="user_name"> <label>Email</label> <input class="form-control" name="user_email"> <label>Username</label> <input class="form-control" name="username"> <label>Password</label> <input class="form-control" name="user_password"> <button class="btn btn-info btn-lg" id="submit-btn" type="submit">Submit</button>
+    <form id="secondform" method="post" action="/api/users">
+      <label>Name</label>
+    	<input class="form-control" name="name">
+    	<label>Email</label>
+    	<input class="form-control" name="email">
+    	<label>Username</label>
+    	<input class="form-control" name="username">
+    	<label>Password</label>
+    	<input class="form-control" name="password">
+    	<button class="btn btn-info btn-lg" id="submit-btn" type="submit">Submit</button>
     </form>
 
-</div>
+  </div>
 </div>
 
-<!--map goes here-->
-<div id='map' style='width: 400px; height: 300px;'></div>
 
 <!-- FOOTER -->
 <nav class="navbar">waitticket</nav>
