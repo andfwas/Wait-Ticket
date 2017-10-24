@@ -9,7 +9,7 @@ form.addEventListener('submit', (event) => {
 })
 
 getInfo = (id) => {
-    fetch(`http://localhost:3000/api/tickets/${id}`)
+    fetch(`http://localhost:3000/api/tickets/username/${id}`)
     .then((response) => {
         return response.json()
         .then((data) => {
