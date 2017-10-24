@@ -6,8 +6,7 @@ var router = express.Router();
 
 router.get('/', (req, res, next)=>{
       res.render('index',{
-        title: "waitticket",
-        testData: testData
+        title: "waitticket"
       })
     })
 
