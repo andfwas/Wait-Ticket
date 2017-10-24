@@ -11,7 +11,7 @@
 
 <body>
   <!-- BEGIN NAV -->
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg text-white">
   <a class="navbar-brand" href="#">waiTTicket</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -69,17 +69,18 @@
 
     <form action="/api/tickets" id="firstform" method="post">
         <label>Event Title</label> <input class="form-control" id="event_title" name="event_title"> <label>Date</label> <input class="form-control" id="form_date" name="form_date"> <label>Time</label> <input class="form-control" id="form_time" name="form_time"> <label>Venue</label> <input class="form-control" id="form_venue" name="form_venue"> <select class="form-control" name="form_type">
-            <option value="one">
-                Music
-            </option>
+          <option value="Select Type">
+            Select type:
+          </option>
 
-            <option value="two">
-                Sports
-            </option>
+          <option value="Music">
+              Music
+          </option>
 
-            <option value="three">
-                Other
-            </option>
+          <option value="Sports">
+              Sports
+          </option>
+
         </select> <label>Ticket Link</label> <input class="form-control" name="ticket_link"> <button class="btn btn-info btn-lg" id="submit-btn" type="submit">Submit</button>
     </form>
 
