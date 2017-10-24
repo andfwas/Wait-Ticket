@@ -1,67 +1,70 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="main.css" rel="stylesheet" type="text/css">
 
-    <title>{{title}}</title>
+<head>
+  <meta>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="main.css" rel="stylesheet" type="text/css">
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.js'></script>
+  <title>{{title}}</title>
 </head>
 
 <body>
   <!-- BEGIN NAV -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">waiTTicket</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#">waiTTicket</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
 
 
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
-    </form>
-  </div>
-</nav>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+      </form>
+    </div>
+  </nav>
 
 
   <!-- END NAV -->
 
 
-    {{#each testData}}
+  {{#each testData}}
 
     <h3>{{this.title}}</h3>
 
     <h4>{{this.sub_title}}</h4>
 
-    <p>{{this.zipcode}}</p>{{/each}}
+    <p>{{this.zipcode}}</p>
+  {{/each}}
 
-    <form action="/api/tickets" id="firstform" method="post">
-        <label>Event Title</label> <input class="form-control" id="event_title" name="event_title"> <label>Date</label> <input class="form-control" id="form_date" name="form_date"> <label>Time</label> <input class="form-control" id="form_time" name="form_time"> <label>Venue</label> <input class="form-control" id="form_venue" name="form_venue"> <select class="form-control" name="form_type">
+  <form action="/api/tickets" id="firstform" method="post">
+    <label>Event Title</label> <input class="form-control" id="event_title" name="event_title"> <label>Date</label> <input class="form-control" id="form_date" name="form_date"> <label>Time</label> <input class="form-control" id="form_time" name="form_time">    <label>Venue</label> <input class="form-control" id="form_venue" name="form_venue"> <select class="form-control" name="form_type">
             <option value="one">
                 Music
             </option>
@@ -74,16 +77,24 @@
                 Other
             </option>
         </select> <label>Ticket Link</label> <input class="form-control" name="ticket_link"> <button class="btn btn-info" id="submit-btn" type="submit">Submit</button>
-    </form>
+  </form>
 
-    <form id="secondform">
-        <label>Name</label> <input class="form-control" name="user_name"> <label>Email</label> <input class="form-control" name="user_email"> <label>Username</label> <input class="form-control" name="username"> <label>Password</label> <input class="form-control" name="user_password"> <button class="btn btn-info" id="submit-btn" type="submit">Submit</button>
-    </form>
-    
-    <script charset="utf-8" src="/main.js" type="text/javascript">
-</script><script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" type="text/javascript">
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" type="text/javascript">
-</script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" type="text/javascript">
-</script>
+  <form id="secondform">
+    <label>Name</label> <input class="form-control" name="user_name"> <label>Email</label> <input class="form-control" name="user_email"> <label>Username</label> <input class="form-control" name="username"> <label>Password</label> <input class="form-control"
+      name="user_password"> <button class="btn btn-info" id="submit-btn" type="submit">Submit</button>
+  </form>
+
+  <div id='map' style='width: 400px; height: 300px;'></div>
+
+  <script charset="utf-8" src="/main.js" type="text/javascript">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" type="text/javascript">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" type="text/javascript">
+  </script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" type="text/javascript">
+  </script>
 </body>
+
 </html>
