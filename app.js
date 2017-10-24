@@ -60,6 +60,18 @@ app.post('/api/users', (req,res) =>{
   })
 })
 
+app.post('/api/users/login', (req,res) =>{
+  db.loginAccount(req.body.username,req.body.password)
+  .then(user => {
+    if(user.length==0){
+      res.sendStatus(401);
+    } else{
+      res.json(user)
+    }
+  }).catch(err=>{
+    res.status(500).send(err)
+  })
+})
 
 //App Listen
 app.listen(port, () =>{

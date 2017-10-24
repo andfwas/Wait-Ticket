@@ -28,6 +28,15 @@ createAccount = (data) => {
   return db('users').insert(data)
 }
 
+loginAccount = (username,password) => {
+  return db('users').select().where(
+    {
+      username: username,
+      password: password
+    }
+  )
+}
+
 module.exports = {
   getAllTickets,
   getAllUsers,
@@ -35,5 +44,6 @@ module.exports = {
   getTicketsByUserName,
   getTicketsByType,
   addTicket,
-  createAccount
+  createAccount,
+  loginAccount
 }
