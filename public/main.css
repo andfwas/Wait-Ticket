@@ -6,13 +6,13 @@ body {
   color: #EEF1F5;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 401px) and (max-width: 960px) {
   body {
     background-color: blue;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 961px) {
   body {
     background-color: #2B3643;
   }
