@@ -1,11 +1,18 @@
-const form = document.getElementById('secondform')
-
-form.addEventListener('submit', (event) => {
+const form2 = document.getElementById('secondform')
+form2.addEventListener('submit', (event) => {
     event.preventDefault()
 
     let id = event.target.elements.username.value
     console.log(id)
     getInfo(id)
+})
+
+const form = document.getElementById('firstform')
+form.addEventListener('change', (event) => {
+    event.preventDefault()
+
+    let id = event.target.value
+    console.log(id)
 })
 
 getInfo = (id) => {
