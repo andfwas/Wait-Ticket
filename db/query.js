@@ -20,10 +20,20 @@ getTicketsByType = type => {
   return db('tickets').where('type', type)
 }
 
+addTicket = (data) => {
+  return db('tickets').insert(data)
+}
+
+createAccount = (data) => {
+  return db('users').insert(data)
+}
+
 module.exports = {
   getAllTickets,
   getAllUsers,
   getUserByUserName,
   getTicketsByUserName,
-  getTicketsByType
+  getTicketsByType,
+  addTicket,
+  createAccount
 }

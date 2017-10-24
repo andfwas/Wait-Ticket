@@ -42,8 +42,22 @@ app.get('/api/tickets/username/:username', (req, res) => {
 app.get('/api/tickets/type/:type', (req, res) => {
   const type = req.params.type
   console.log(type)
-  db.getTicketsByType(type) 
+  db.getTicketsByType(type)
   .then(tickets => res.json(tickets))
+})
+
+app.post('/api/tickets', (req,res) =>{
+  db.addTicket(req.body)
+  .then(data => {
+    res.json(data)
+  })
+})
+
+app.post('/api/users', (req,res) =>{
+  db.createAccount(req.body)
+  .then(data => {
+    res.json(data)
+  })
 })
 
 
