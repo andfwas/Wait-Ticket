@@ -41,10 +41,12 @@ app.get('/api/tickets/username/:username', (req, res) => {
   .then(tickets => res.json(tickets))
 })
 
-app.get('/api/tickets/type/:type', (req, res) => {
+app.get('/api/tickets/type/:type,:location', (req, res) => {
   const type = req.params.type
-  console.log(type)
-  db.getTicketsByType(type)
+  const location = req.params.location
+  //console.log(type)
+  //console.log(location)
+  db.getTicketsByType(type,location)
   .then(tickets => res.json(tickets))
 })
 
