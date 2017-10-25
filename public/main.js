@@ -1,3 +1,8 @@
+
+
+
+
+
 // const form2 = document.getElementById('createaccount')
 // form2.addEventListener('submit', (event) => {
 //     event.preventDefault()
@@ -7,13 +12,37 @@
 //     getInfo(id)
 // })
 //
-// const form = document.getElementById('addticketform')
-// form.addEventListener('change', (event) => {
-//     event.preventDefault()
-//
-//     let id = event.target.value
-//     console.log(id)
-// })
+const form = document.getElementById('typeform')
+form.addEventListener('change', (event) => {
+    event.preventDefault()
+
+    let id = event.target.name
+
+    let idLoc;
+    let idType;
+
+    if(id === 'location') {
+      idLoc = event.target.value
+    }
+    else if(id === 'eventtype') {
+      idType = event.target.value
+    }
+
+    //console.log(idType)
+    getInfoByCategory(idType,idLoc)
+})
+
+getInfoByCategory = (idType, idLoc) => {
+  fetch(`http://localhost:3000/api/tickets/type/${idType},${idLoc}`)
+  .then((response) => {
+    return response.json()
+  })
+  .then((data) => {
+    console.log(data)
+  })
+}
+
+
 //
 // getInfo = (id) => {
 //     fetch(`http://localhost:3000/api/tickets/username/${id}`)

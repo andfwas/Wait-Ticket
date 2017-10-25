@@ -2,12 +2,15 @@ var express = require('express');
 var router = express.Router();
 
 // const knex = require('../db/connection')
-// const queries = require('../db/query')
+ const db = require('../db/query')
 
-router.get('/', (req, res, next)=>{
-      res.render('index',{
-        title: "waitticket",
-        // testData: testData
+    router.get('/', (req, res, next) => {
+      db.getAllTickets()
+      .then((tickets) => {
+        //console.log(tickets)
+        res.render('index', {
+          tickets: tickets
+        })
       })
     })
 

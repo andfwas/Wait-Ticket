@@ -21,7 +21,7 @@ exports.seed = function(knex, Promise) {
           time: '18:00:00',
           venue: 'Red Rocks Ampitheater',
           location: "Denver, CO",
-          type: 'Concert',
+          type: 'Music',
           pdf_link: 'www.fakepdf.com',
           user_id: '1'
         }

@@ -20,8 +20,13 @@
       <h4 class="card-title">The easiest way to get tickets to local events and shows at the last minute... FOR FREE!</h4>
     </div>
 
+<<<<<<< HEAD
     <div id="createaccount" >
         <form  method="post" action="/api/users">
+=======
+
+      <form id="typeform">
+>>>>>>> d4a9119a5f64af497db51dfec0bcfe213c0b5a73
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="location">Location</label>
@@ -37,7 +42,7 @@
 
           <div class="form-group col-md-6">
             <label for="eventType">Event Type</label>
-            <select class="form-control" name="Event Type">
+            <select class="form-control" name="eventtype">
               <option value="Choose">
                 Choose...
               </option>
@@ -176,11 +181,16 @@
 
 
 <!-- container with search results and map -->
+
   <div class="row no-gutters">
     <div class="col-3" id="searchFormatting">
       {{#each tickets}}
       <div>
         <p>{{this.event}}</p>
+        <p>{{this.venue}}</p>
+        <p>{{this.location}}</p>
+        <p>{{this.date}}</p>
+        <p>{{this.time}}</p>
       </div>
       {{/each}}
     </div>
