@@ -6,6 +6,7 @@ const port = process.env.PORT || 3000
 const app = express()
 const db = require('./db/query')
 const index = require('./routes/index')
+const myprofile = require('./routes/myprofile')
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index)
+app.use('/myprofile', myprofile)
 
 // App Get Results
 app.get('/api/tickets', (req,res) => {
