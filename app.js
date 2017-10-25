@@ -75,7 +75,7 @@ app.post('/api/users/login', (req,res) =>{
     } else{
       res.json(user)
     }
-  }).catch(err=>{
+  }).catch(err =>{
     res.status(500).send(err)
   })
 })
