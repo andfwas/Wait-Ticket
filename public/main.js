@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-
-const form2 = document.getElementById('createaccount')
-form2.addEventListener('submit', (event) => {
-    event.preventDefault()
-
-    let id = event.target.elements.username.value
-    console.log(id)
-    getInfo(id)
-})
-
-const form = document.getElementById('addticketform')
-form.addEventListener('change', (event) => {
-    event.preventDefault()
-
-    let id = event.target.value
-    console.log(id)
-})
-
-=======
->>>>>>> 12b01194b40b06c81621c5e3d534fd97cc26b8dd
 // const form2 = document.getElementById('createaccount')
 // form2.addEventListener('submit', (event) => {
 //     event.preventDefault()
