@@ -46,6 +46,7 @@ app.get('/api/tickets/type/:type', (req, res) => {
   .then(tickets => res.json(tickets))
 })
 
+//App Post
 app.post('/api/tickets', (req,res) =>{
   db.addTicket(req.body)
   .then(data => {
