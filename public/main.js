@@ -1,4 +1,4 @@
-const form2 = document.getElementById('secondform')
+const form2 = document.getElementById('createaccount')
 form2.addEventListener('submit', (event) => {
     event.preventDefault()
 
@@ -7,7 +7,7 @@ form2.addEventListener('submit', (event) => {
     getInfo(id)
 })
 
-const form = document.getElementById('firstform')
+const form = document.getElementById('addticketform')
 form.addEventListener('change', (event) => {
     event.preventDefault()
 
@@ -16,7 +16,7 @@ form.addEventListener('change', (event) => {
 })
 
 getInfo = (id) => {
-    fetch(`https://waitticket.herokuapp.com/api/tickets/username/${id}`)
+    fetch(`http://localhost:3000/api/tickets/username/${id}`)
     .then((response) => {
         return response.json()
         .then((data) => {
@@ -64,3 +64,41 @@ var map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/dark-v9'
 });
+
+
+//Lizz's new shit
+let loginButton = document.getElementsByClassName('btn-outline-light')[0]
+let loginForm = document.getElementById('loginform')
+loginButton.addEventListener('click', event => {
+  event.preventDefault()
+  loginForm.style.display = 'block'
+})
+let closeForm = document.getElementsByClassName('closeform')[0]
+closeForm.addEventListener('click', event => {
+  loginForm.style.display = 'none'
+})
+
+
+let ticketButton = document.getElementsByClassName('addticketformButton')[0]
+let addticketform = document.getElementById('addticketform')
+ticketButton.addEventListener('click', event => {
+  event.preventDefault()
+  addticketform.style.display = 'block'
+})
+let closeTicketForm = document.getElementsByClassName('closeform')[1]
+closeTicketForm.addEventListener('click', event => {
+  addticketform.style.display = 'none'
+})
+
+
+let createAccountButton = document.getElementsByClassName('createAccountButton')[0]
+let createaccount = document.getElementById('createaccount')
+createAccountButton.addEventListener('click', event => {
+  event.preventDefault()
+  loginForm.style.display = 'none'
+  createaccount.style.display = 'block'
+})
+let closeCreateAccount = document.getElementsByClassName('closeform')[2]
+closeCreateAccount.addEventListener('click', event => {
+  createaccount.style.display = 'none'
+})
