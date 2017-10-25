@@ -1,11 +1,5 @@
-const form2 = document.getElementById('createaccount')
-form2.addEventListener('submit', (event) => {
-    event.preventDefault()
 
-    let id = event.target.elements.username.value
-    console.log(id)
-    getInfo(id)
-})
+
 
 const form = document.getElementById('addticketform')
 form.addEventListener('change', (event) => {
@@ -13,6 +7,15 @@ form.addEventListener('change', (event) => {
 
     let id = event.target.value
     console.log(id)
+})
+
+const form2 = document.getElementById('createaccount')
+form2.addEventListener('submit', (event) => {
+    event.preventDefault()
+
+    let id = event.target.elements.username.value
+    console.log(id)
+    getInfo(id)
 })
 
 getInfo = (id) => {
