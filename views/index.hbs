@@ -13,25 +13,140 @@
 </head>
 
 <body>
+
+  <!-- START OF FILTER BOX -->
+  <div class="card">
+    <div id="filterform" class="card-body">
+
+      <form  method="post" action="/api/users">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="location">Location</label>
+            <select class="form-control" name="location">
+              <option value="Choose">
+                Choose...
+              </option>
+              <option value="Denver, CO">
+                  Denver, CO
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="eventType">Event Type</label>
+            <select class="form-control" name="Event Type">
+              <option value="Choose">
+                Choose...
+              </option>
+              <option value="Music">
+                Music
+              </option>
+              <option value="Sports">
+                  Sports
+              </option>
+            </select>
+          </div>
+
+        </div>
+        	<button class="btn btn-info" id="submit-btn" type="submit">Filter Tickets</button>
+      </form>
+
+    </div>
+  </div>
+  <!-- END OF FILTER BOX -->
+
+  <!-- START OF LOGIN POPUP -->
+  <div class="card">
+    <div id="loginform" class="card-body">
+
+      <form  method="post" action="/api/users">
+        <div class="form-group">
+          <p class="closeform">X</p>
+        	<label>Username</label>
+        	<input class="form-control" name="username">
+        	<label>Password</label>
+        	<input class="form-control" name="password">
+        	<button class="btn btn-info" id="submit-btn" type="submit">Login</button>
+          <button class="btn btn-info createAccountButton" id="submit-btn" type="button">Create Account</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+  <!-- END OF LOGIN POPUP -->
+
+  <!-- START OF ADD TICKET POPUP -->
+
+    <div id="addticketform">
+      <form action="/api/tickets" method="post">
+        <p class="closeform">X</p>
+        <label>Event Title</label>
+        <input class="form-control" id="event_title" name="event"> <label>Date</label>
+        <input class="form-control" id="form_date" name="date">
+        <label>Time</label>
+        <input class="form-control" id="form_time" name="time"> <label>Venue</label>
+        <input class="form-control" id="form_venue" name="venue">
+        <select class="form-control" name="type">
+          <option value="Select Type">
+            Choose...
+          </option>
+          <option value="Music">
+              Music
+          </option>
+          <option value="Sports">
+              Sports
+          </option>
+        </select>
+        <label>Ticket Link</label>
+        <input class="form-control" name="pdf_link">
+        <button class="btn btn-info" id="submit-btn" type="submit">Submit</button>
+      </form>
+    </div>
+
+  <!-- END OF POPUP -->
+
+
+  <!-- START OF CREATE ACCOUNT POPUP -->
+
+    <div id="createaccount" >
+      <form  method="post" action="/api/users">
+        <div class="form-group">
+          <p class="closeform">X</p>
+          <label>Name</label>
+        	<input class="form-control" name="name">
+        	<label>Email</label>
+        	<input class="form-control" name="email">
+        	<label>Username</label>
+        	<input class="form-control" name="username">
+        	<label>Password</label>
+        	<input class="form-control" name="password">
+        	<button class="btn btn-info" id="submit-btn" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+
+
+  <!-- END OF CREATE ACCOUNT POPUP -->
+
   <!-- BEGIN NAV -->
   <nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" href="#">waiTTicket</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <a class="navbar-brand" href="#"><img class="logo-img" src="wait-ticket-logos-v3.png" alt="waiTTicket logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link addticketformButton">Add Ticket<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
+            Dropdown
+          </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a>
@@ -39,21 +154,15 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
 
 
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Login</button>
       </form>
     </div>
   </nav>
   <!-- END NAV -->
-
-
-
 
 <!-- main image -->
 <div class="main-image">
@@ -62,69 +171,21 @@
 
 
 <!-- container with search results and map -->
-<div class="container" id="searchFormatting">
-  <div id="searchResult1"></div>
-  <div id="searchResult2"></div>
-
-  <div id='map'></div>
-
-</div>
-
-<!-- START OF CARD -->
-<div class="card">
-  <div class="card-body">
-    <form action="/api/tickets" id="firstform" method="post">
-      <label>Event Title</label>
-      <input class="form-control" id="event_title" name="event"> <label>Date</label>
-      <input class="form-control" id="form_date" name="date">
-      <label>Time</label>
-      <input class="form-control" id="form_time" name="time"> <label>Venue</label>
-      <input class="form-control" id="form_venue" name="venue">
-      <select class="form-control" name="type">
-        <option value="Select Type">
-          Select type:
-        </option>
-        <option value="Music">
-            Music
-        </option>
-        <option value="Sports">
-            Sports
-        </option>
-      </select>
-      <label>Ticket Link</label>
-      <input class="form-control" name="pdf_link">
-      <button class="btn btn-info btn-lg" id="submit-btn" type="submit">Submit</button>
-    </form>
+  <div class="row no-gutters">
+    <div class="col-3" id="searchFormatting">
+      <div id="searchResult1"></div>
+      <div id="searchResult2"></div>
+    </div>
+    <div class="col-9">
+      <div id='map'></div>
+    </div>
   </div>
-</div>
-<!-- END OF CARD -->
 
 
-<!-- START OF 2nd CARD -->
-<div class="card">
-  <div class="card-body">
-
-    <form id="secondform" method="post" action="/api/users">
-      <div class="form-group">
-
-        <label>Name</label>
-      	<input class="form-control" name="name">
-      	<label>Email</label>
-      	<input class="form-control" name="email">
-      	<label>Username</label>
-      	<input class="form-control" name="username">
-      	<label>Password</label>
-      	<input class="form-control" name="password">
-      	<button class="btn btn-info btn-lg" id="submit-btn" type="submit">Submit</button>
-      </div>
-    </form>
-
-  </div>
-</div>
 
 
 <!-- FOOTER -->
-<nav class="navbar">waiTTicket &copy; 2017 - help@waiTTicket.com</nav>
+<nav class="navbar" id="foot-nav">waiTTicket &copy; 2017 - help@waiTTicket.com</nav>
 
 <!-- scripts -->
     <script charset="utf-8" src="/main.js" type="text/javascript"></script>
