@@ -9,7 +9,7 @@ exports.up = function(knex, Promise) {
       table.string('venue')
       table.string('type')
       table.string('pdf_link')
-      table.string('username')
+      table.string('user_id')
     })
   ])
 };

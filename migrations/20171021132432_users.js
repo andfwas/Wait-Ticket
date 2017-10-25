@@ -7,6 +7,7 @@ exports.up = function(knex, Promise) {
       table.string('email')
       table.string('username')
       table.string('password')
+      table.string('token')
     })
   ])
 };
