@@ -9,7 +9,8 @@ exports.seed = function(knex, Promise) {
           event: 'Broncos Game',
           date: '11-03-17',
           time: '20:00:00',
-          venue: 'Invesco Field',
+          venue: 'Mile High Stadium',
+          location: "Denver, CO",
           type: 'Sports',
           pdf_link: 'www.fakepdf.com',
           user_id: '1'
@@ -19,6 +20,7 @@ exports.seed = function(knex, Promise) {
           date: '01-10-18',
           time: '18:00:00',
           venue: 'Red Rocks Ampitheater',
+          location: "Denver, CO",
           type: 'Concert',
           pdf_link: 'www.fakepdf.com',
           user_id: '1'
