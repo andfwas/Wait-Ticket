@@ -12,7 +12,7 @@ exports.seed = function(knex, Promise) {
           venue: 'Invesco Field',
           type: 'Sports',
           pdf_link: 'www.fakepdf.com',
-          username: 'geebrown43'
+          user_id: '1'
         },
         {
           event: 'J Cole Concert',
@@ -21,7 +21,7 @@ exports.seed = function(knex, Promise) {
           venue: 'Red Rocks Ampitheater',
           type: 'Concert',
           pdf_link: 'www.fakepdf.com',
-          username: 'geebrown43'
+          user_id: '1'
         }
       ]);
     });
