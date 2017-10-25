@@ -83,9 +83,14 @@ app.post('/api/users/login', (req,res) =>{
         res.sendStatus(401);
       } else{
         var token = generateToken()
+        // console.log(token)
         db.updateToken(req.body.username,token)
         .then(data =>{
-          res.redirect('/?t='+token)
+          console.log("cookies before: ", req.cookies['token'])
+          // res.clearCookie('token')
+          // res.cookie('token', token);
+          // res.redirect('/')
+          // console.log("cookies after: ", req.cookies['token'])
         })
       }
   })
