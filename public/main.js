@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 const form2 = document.getElementById('createaccount')
 form2.addEventListener('submit', (event) => {
@@ -16,6 +17,8 @@ form.addEventListener('change', (event) => {
     console.log(id)
 })
 
+=======
+>>>>>>> 12b01194b40b06c81621c5e3d534fd97cc26b8dd
 // const form2 = document.getElementById('createaccount')
 // form2.addEventListener('submit', (event) => {
 //     event.preventDefault()
@@ -33,7 +36,6 @@ form.addEventListener('change', (event) => {
 //     console.log(id)
 // })
 //
->>>>>>> d82f10e9edf9aeeea6dfa43ad4530ab477826916
 // getInfo = (id) => {
 //     fetch(`http://localhost:3000/api/tickets/username/${id}`)
 //     .then((response) => {
@@ -86,7 +88,7 @@ style: 'mapbox://styles/mapbox/dark-v9'
 
 
 //Lizz's new shit
-let loginButton = document.getElementsByClassName('btn-outline-light')[0]
+let loginButton = document.getElementById('loginButton')
 let loginForm = document.getElementById('loginform')
 loginButton.addEventListener('click', event => {
   event.preventDefault()
