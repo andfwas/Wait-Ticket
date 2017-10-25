@@ -37,6 +37,27 @@ loginAccount = (username,password) => {
   )
 }
 
+generateToken = () =>{
+  var code = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  for (var i = 0; i < 30; i++){
+    code += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+  return code;
+}
+
+updateToken = (username, token) => {
+  return db('users').select().update('token',token).where('username',username)
+}
+
+releaseToken = (token) => {
+  return db('users').select().update('token','').where('token',token)
+}
+
+getUserByUserToken = (token) => {
+  return db('users').first().where('token', token)
+}
+
 module.exports = {
   getAllTickets,
   getAllUsers,
@@ -45,5 +66,9 @@ module.exports = {
   getTicketsByType,
   addTicket,
   createAccount,
-  loginAccount
+  loginAccount,
+  updateToken,
+  generateToken,
+  getUserByUserToken,
+  releaseToken
 }
