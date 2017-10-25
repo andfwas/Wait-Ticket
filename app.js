@@ -54,11 +54,14 @@ app.get('/api/tickets/type/:type,:location', (req, res) => {
 
 //App Post
 app.post('/api/tickets', (req,res) =>{
-  db.addTicket(req.body)
-  .then(data => {
-    res.json(data)
-    getTicketToken()
-
+  var cookieToken = req.cookies['token']
+  db.getUserByUserToken(cookieToken)
+  .then(userInfo => {
+    console.log(userInfo.user_id)
+    // db.addTicket(req.body)
+    // .then(data => {
+    //   console.log(req.cookies['token'])
+    // })
   })
 })
 
@@ -86,11 +89,9 @@ app.post('/api/users/login', (req,res) =>{
         // console.log(token)
         db.updateToken(req.body.username,token)
         .then(data =>{
-          console.log("cookies before: ", req.cookies['token'])
-          // res.clearCookie('token')
-          // res.cookie('token', token);
-          // res.redirect('/')
-          // console.log("cookies after: ", req.cookies['token'])
+          res.clearCookie('token')
+          res.cookie('token', token);
+          res.redirect('/')
         })
       }
   })
