@@ -7,6 +7,7 @@ exports.up = function(knex, Promise) {
       table.string('date')
       table.string('time')
       table.string('venue')
+      table.string('location')
       table.string('type')
       table.string('pdf_link')
       table.string('user_id')

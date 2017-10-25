@@ -156,9 +156,10 @@
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-
-
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Login</button>
+        <button id="loginButton" class="btn btn-outline-light my-2 my-sm-0" type="submit">Login</button>
+      </form>
+      <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><a href="profile.hbs">My Profile</a></button></a>
       </form>
     </div>
   </nav>
@@ -174,7 +175,11 @@
 
   <div class="row no-gutters">
     <div class="col-3" id="searchFormatting">
-      <div class="container"></div>
+      {{#each tickets}}
+      <div>
+        <p>{{this.event}}</p>
+      </div>
+      {{/each}}
     </div>
     <div class="col-9">
       <div id='map'></div>
