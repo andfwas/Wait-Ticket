@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const form2 = document.getElementById('createaccount')
 form2.addEventListener('submit', (event) => {
     event.preventDefault()
@@ -15,6 +16,25 @@ form.addEventListener('change', (event) => {
     console.log(id)
 })
 
+=======
+// const form2 = document.getElementById('createaccount')
+// form2.addEventListener('submit', (event) => {
+//     event.preventDefault()
+//
+//     let id = event.target.elements.username.value
+//     console.log(id)
+//     getInfo(id)
+// })
+//
+// const form = document.getElementById('addticketform')
+// form.addEventListener('change', (event) => {
+//     event.preventDefault()
+//
+//     let id = event.target.value
+//     console.log(id)
+// })
+//
+>>>>>>> d82f10e9edf9aeeea6dfa43ad4530ab477826916
 // getInfo = (id) => {
 //     fetch(`http://localhost:3000/api/tickets/username/${id}`)
 //     .then((response) => {
