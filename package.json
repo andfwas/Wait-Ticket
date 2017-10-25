@@ -20,6 +20,7 @@
   "homepage": "https://github.com/geralle/Wait-Ticket#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "hbs": "^4.0.1",

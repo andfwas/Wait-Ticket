@@ -131,3 +131,6 @@ let closeCreateAccount = document.getElementsByClassName('closeform')[2]
 closeCreateAccount.addEventListener('click', event => {
   createaccount.style.display = 'none'
 })
+
+var query = window.location.search.substring(1);
+console.log(query)
