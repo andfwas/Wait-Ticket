@@ -1,13 +1,23 @@
 
 
 
-const form = document.getElementById('addticketform')
+const form = document.getElementById('choosebytype')
 form.addEventListener('change', (event) => {
     event.preventDefault()
 
     let id = event.target.value
     console.log(id)
 })
+
+getInfoByType = (id) => {
+  fetch(`http://localhost:3000/api/tickets/type/${id}`)
+  .then((response)=> {
+    return response.json()
+  })
+  .then((data) => {
+    console.log(data)
+  })
+}
 
 const form2 = document.getElementById('createaccount')
 form2.addEventListener('submit', (event) => {
