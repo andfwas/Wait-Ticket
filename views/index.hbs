@@ -15,8 +15,10 @@
 <body>
 
   <!-- START OF FILTER BOX -->
-  <div class="card">
-    <div id="filterform" class="card-body">
+  <div class="card" id="filterform">
+    <div class="card-header text-center">
+      <h4 class="card-title">The easiest way to get tickets to local events and shows at the last minute... FOR FREE!</h4>
+    </div>
 
       <form id="typeform">
         <div class="form-row">
@@ -48,26 +50,28 @@
           </div>
 
         </div>
-        	<button class="btn btn-info" id="submit-btn" type="submit">Filter Tickets</button>
+        	<button class="btn btn-success btn-block" id="submit-btn" type="submit">Filter Free Tickets</button>
       </form>
 
     </div>
   </div>
+
   <!-- END OF FILTER BOX -->
+
 
   <!-- START OF LOGIN POPUP -->
   <div class="card">
     <div id="loginform" class="card-body">
 
-      <form  method="post" action="/api/users">
+      <form  method="post" action="/api/users/login">
         <div class="form-group">
           <p class="closeform">X</p>
         	<label>Username</label>
         	<input class="form-control" name="username">
         	<label>Password</label>
         	<input class="form-control" name="password">
-        	<button class="btn btn-info" id="submit-btn" type="submit">Login</button>
-          <button class="btn btn-info createAccountButton" id="submit-btn" type="button">Create Account</button>
+        	<button class="btn btn-success btn-block" id="submit-btn" type="submit">Login</button>
+          <button class="btn btn-success btn-block createAccountButton" id="submit-btn" type="button">Create Account</button>
         </div>
       </form>
 
@@ -99,7 +103,7 @@
         </select>
         <label>Ticket Link</label>
         <input class="form-control" name="pdf_link">
-        <button class="btn btn-info" id="submit-btn" type="submit">Submit</button>
+        <button class="btn btn-success btn-block" id="submit-btn" type="submit">Submit</button>
       </form>
     </div>
 
@@ -120,11 +124,10 @@
         	<input class="form-control" name="username">
         	<label>Password</label>
         	<input class="form-control" name="password">
-        	<button class="btn btn-info" id="submit-btn" type="submit">Submit</button>
+        	<button class="btn btn-success btn-block" id="submit-btn" type="submit">Submit</button>
         </div>
       </form>
     </div>
-
 
   <!-- END OF CREATE ACCOUNT POPUP -->
 
@@ -191,16 +194,15 @@
   </div>
 
 
-
-
 <!-- FOOTER -->
 <nav class="navbar" id="foot-nav">waiTTicket &copy; 2017 - help@waiTTicket.com</nav>
 
+
 <!-- scripts -->
-    <script charset="utf-8" src="/main.js" type="text/javascript"></script>
-<script src='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.js'></script><script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" type="text/javascript"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" type="text/javascript"></script>
+  <script charset="utf-8" src="/main.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" type="text/javascript"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 
 </html>
