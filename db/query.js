@@ -31,8 +31,8 @@ createAccount = (data) => {
 loginAccount = (username,password) => {
   return db('users').select().where(
     {
-      username: username,
-      password: password
+      'username': username,
+      'password': password
     }
   )
 }
@@ -58,6 +58,11 @@ getUserByUserToken = (token) => {
   return db('users').first().where('token', token)
 }
 
+getTicketToken = (token) => {
+  // var query = window.location.search.substring(1);
+  // console.log(query)
+}
+
 module.exports = {
   getAllTickets,
   getAllUsers,
@@ -70,5 +75,6 @@ module.exports = {
   updateToken,
   generateToken,
   getUserByUserToken,
-  releaseToken
+  releaseToken,
+  getTicketToken
 }
