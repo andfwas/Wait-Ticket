@@ -27,11 +27,21 @@ body {
   margin: 0;
 }
 
+.btn-success {
+  background-color: #283593;
+  border-color: #283593;
+}
+
+.btn-success:hover {
+  background-color: #231766;
+  border-color: #231766;
+}
+
 #filterform {
   width: 40vw;
   position: absolute;
   left: 30vw;
-  top: 40vh;
+  top: 30vh;
   background-color: white;
   z-index: 1;
   border: 1px solid black;
