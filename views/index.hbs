@@ -15,9 +15,12 @@
 <body>
 
   <!-- START OF FILTER BOX -->
-  <div class="card">
-    <div id="filterform" class="card-body">
+  <div class="card" id="filterform">
+    <div class="card-header text-center">
+      <h4 class="card-title">The easiest way to get tickets to local events and shows at the last minute... FOR FREE!</h4>
+    </div>
 
+    <div class="card-body">
       <form  method="post" action="/api/users">
         <div class="form-row">
           <div class="form-group col-md-6">
@@ -48,12 +51,14 @@
           </div>
 
         </div>
-        	<button class="btn btn-info" id="submit-btn" type="submit">Filter Tickets</button>
+        	<button class="btn btn-success btn-block" id="submit-btn" type="submit">Filter Free Tickets</button>
       </form>
 
     </div>
   </div>
+
   <!-- END OF FILTER BOX -->
+
 
   <!-- START OF LOGIN POPUP -->
   <div class="card">
@@ -66,8 +71,8 @@
         	<input class="form-control" name="username">
         	<label>Password</label>
         	<input class="form-control" name="password">
-        	<button class="btn btn-info" id="submit-btn" type="submit">Login</button>
-          <button class="btn btn-info createAccountButton" id="submit-btn" type="button">Create Account</button>
+        	<button class="btn btn-success btn-block" id="submit-btn" type="submit">Login</button>
+          <button class="btn btn-success btn-block createAccountButton" id="submit-btn" type="button">Create Account</button>
         </div>
       </form>
 
@@ -99,7 +104,7 @@
         </select>
         <label>Ticket Link</label>
         <input class="form-control" name="pdf_link">
-        <button class="btn btn-info" id="submit-btn" type="submit">Submit</button>
+        <button class="btn btn-success btn-block" id="submit-btn" type="submit">Submit</button>
       </form>
     </div>
 
@@ -120,7 +125,7 @@
         	<input class="form-control" name="username">
         	<label>Password</label>
         	<input class="form-control" name="password">
-        	<button class="btn btn-info" id="submit-btn" type="submit">Submit</button>
+        	<button class="btn btn-success btn-block" id="submit-btn" type="submit">Submit</button>
         </div>
       </form>
     </div>
