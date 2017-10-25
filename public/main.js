@@ -38,7 +38,12 @@ getInfoByCategory = (idType, idLoc) => {
     return response.json()
   })
   .then((data) => {
-    console.log(data)
+let venue = []
+    for(let i in data){
+      console.log(typeof data[i].venue)
+      
+    }
+   
   })
 }
 
