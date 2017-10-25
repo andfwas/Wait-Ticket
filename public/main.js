@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-=======
-// const form2 = document.getElementById('createaccount')
-// form2.addEventListener('submit', (event) => {
-//     event.preventDefault()
-//
-//     let id = event.target.elements.username.value
-//     console.log(id)
-//     getInfo(id)
-// })
-//
-// const form = document.getElementById('addticketform')
-// form.addEventListener('change', (event) => {
-//     event.preventDefault()
-//
-//     let id = event.target.value
-//     console.log(id)
-// })
-// 
->>>>>>> 11437ca7f5ab44a800dc8c2e2d8c9064a602ab4d
 // const form2 = document.getElementById('createaccount')
 // form2.addEventListener('submit', (event) => {
 //     event.preventDefault()
