@@ -163,8 +163,3 @@ logoutButton.addEventListener('click',function(event){
   document.cookie = `token=; expires=${dt}`;
   location.reload()
 })
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 8a831aafd1fc3df63a3968b673dda9b8e952243b
