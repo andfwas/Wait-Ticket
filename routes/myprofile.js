@@ -4,8 +4,8 @@ var router = express.Router();
 // const knex = require('../db/connection')
 const db = require('../db/query')
 
-router.get('/myprofile', (req, res, next) => {
-  db.getUserByUserId(user_id)
+router.get('/', (req, res, next) => {
+  db.getTicketsByUserId()
   .then((tickets) => {
     res.render('myprofile',{
       tickets:tickets
