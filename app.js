@@ -73,14 +73,14 @@ app.post('/api/tickets', (req,res) =>{
 app.post('/api/users', (req,res) =>{
   db.createAccount(req.body)
   .then(data => {
-    res.json(data)
-    // var username = req.body.username
-    // console.log("username", username)
-    // console.log(req.body)
-    // let search = document.getElementById('seachResult1')
-    // let p = document.createElement('p')
-    // p.innerText = req.body.username
-    // search.append(p)
+    var token = generateToken()
+    // console.log(token)
+    db.updateToken(req.body.username,token)
+    .then(data =>{
+      res.clearCookie('token')
+      res.cookie('token', token);
+      res.redirect('/')
+    })
   })
 })
 

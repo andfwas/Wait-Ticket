@@ -79,6 +79,10 @@ updateUserData = (username, data) => {
   }).where('username',username)
 }
 
+getTicketsByTicketId = () => {
+
+}
+
 module.exports = {
   getAllTickets,
   getAllUsers,
@@ -92,5 +96,6 @@ module.exports = {
   generateToken,
   getUserByUserToken,
   releaseToken,
-  updateUserData
+  updateUserData,
+  getTicketsByTicketId
 }
