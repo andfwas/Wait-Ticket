@@ -1,3 +1,4 @@
 WaitTicketLogos.ai
 node_modules
 .env
+sendgrid.env

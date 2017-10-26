@@ -9,6 +9,7 @@ const app = express()
 const db = require('./db/query')
 const index = require('./routes/index')
 const myprofile = require('./routes/myprofile')
+const accountcreate = require('./routes/accountcreate')
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -22,6 +23,7 @@ app.use(methodOverride('_method'))
 
 app.use('/', index)
 app.use('/myprofile', myprofile)
+app.use('/accountcreate', accountcreate)
 
 // App Get Results
 app.get('/api/tickets', (req,res) => {
