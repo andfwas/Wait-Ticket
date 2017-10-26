@@ -19,7 +19,8 @@ var router = express.Router();
        db.getAllTickets()
        .then((tickets) => {
          res.render('index', {
-           tickets: tickets
+          tickets: tickets,
+          name: user.name
          })
        })
      })

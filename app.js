@@ -2,12 +2,14 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const path = require('path')
 const cookieParser = require('cookie-parser')
+const methodOverride = require('method-override')
 
 const port = process.env.PORT || 3000
 const app = express()
 const db = require('./db/query')
 const index = require('./routes/index')
 const myprofile = require('./routes/myprofile')
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -16,6 +18,7 @@ app.use(cookieParser())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'))
 
 app.use('/', index)
 app.use('/myprofile', myprofile)
@@ -98,6 +101,14 @@ app.post('/api/users/login', (req,res) =>{
       }
   })
 })
+
+// app.post('/api/users?_method=PUT'), (req,res) =>{
+//   var cookieToken = req.cookies['token']
+//   db.getUserByUserToken(cookieToken)
+//   .then(user => {
+//
+//   })
+// }
 
 //App Listen
 app.listen(port, () =>{

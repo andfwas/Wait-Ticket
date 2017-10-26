@@ -5,10 +5,14 @@ var router = express.Router();
 const db = require('../db/query')
 
 router.get('/', (req, res, next)=>{
-      res.render('myprofile',{
+  var token = req.cookies['token']
+  db.getUserByUserToken(token)
+  .then(user =>{
+    res.render('myprofile',{
         title: "waitticket",
-        // testData: testData
+        name: user.name
       })
     })
+  })
 
 module.exports = router;

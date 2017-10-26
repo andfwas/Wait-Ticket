@@ -157,6 +157,7 @@ if(cookie.search('token') < 0){
 var dt = new Date();
 var logoutButton = document.getElementById('logoutButton')
 logoutButton.addEventListener('click',function(event){
+  console.log('click')
   document.cookie = `token=; expires=${dt}`;
   location.reload()
 })

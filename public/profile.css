@@ -54,7 +54,7 @@ font-size: 150%;
     overflow-y: scroll;
 }
 
-/*.force-overflow {
+.force-overflow {
     min-height: 450px;
 }
 
@@ -68,38 +68,16 @@ font-size: 150%;
     border-radius: 10px;
     background-color: rgb(213, 92, 90);
 
-}*/
-
-#ticket-container{
-  display: flex;
-  flex-direction: row;
 }
-
-#ticket-selection{
-  overflow: scroll;
-  height: 600px;
-}
-
 
 /*end of scrollbar*/
 
 
-/*#filterform {
+#filterform {
   width: 30rem;
   position: absolute;
   right: 5rem;
-  top: 15rem;
-  background-color: white;
-  z-index: 1;
-  border: 1px solid black;
-  border-radius: 5px;
-  box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
-}*/
-#filterform {
-  width: 40vw;
-  position: absolute;
-  left: 30vw;
-  top: 30vh;
+  top: 10rem;
   background-color: white;
   z-index: 1;
   border: 1px solid black;
@@ -111,7 +89,7 @@ font-size: 150%;
   width: 30rem;
   position: absolute;
   left: 5rem;
-  top: 15rem;
+  top: 10rem;
   background-color: white;
   z-index: 1;
   border: 1px solid black;
