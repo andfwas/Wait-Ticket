@@ -27,7 +27,7 @@ body {
   margin: 0;
 }
 
-.btn-success {
+.btn-success, .btn-sm {
   background-color: #8D3300;
   border-color: #8D3300;
 }
@@ -35,6 +35,10 @@ body {
 .btn-success:hover {
   background-color: #5A2100;
   border-color: #5A2100;
+}
+
+.btn-sm {
+  color: #EEF1F5;
 }
 
 .textTitle {
@@ -133,16 +137,16 @@ font-size: 150%;
 }
 
 #loginform{
-  height: 30vh;
+  height: auto;
 }
 
 #createaccount{
-  height: 50vh;
+  height: auto;
   padding: 30px;
 }
 
 #addticketform{
-  height: 65vh;
+  height: auto;
 }
 
 /*.wholePageDim{
