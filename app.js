@@ -57,25 +57,27 @@ app.post('/api/tickets', (req,res) =>{
   var cookieToken = req.cookies['token']
   db.getUserByUserToken(cookieToken)
   .then(userInfo => {
-    console.log(userInfo.user_id)
-    // db.addTicket(req.body)
-    // .then(data => {
-    //   console.log(req.cookies['token'])
-    // })
+    var ticketUserId = userInfo.id
+    // console.log(userInfo.id)
+    db.addTicket(req.body, ticketUserId)
+    .then(data => {
+      // console.log(req.cookies['token'])
+      res.redirect('/myprofile')
+    })
   })
 })
 
 app.post('/api/users', (req,res) =>{
   db.createAccount(req.body)
-  .then(data => {
-    res.json(data)
-    // var username = req.body.username
-    // console.log("username", username)
-    // console.log(req.body)
-    // let search = document.getElementById('seachResult1')
-    // let p = document.createElement('p')
-    // p.innerText = req.body.username
-    // search.append(p)
+  .then(user => {
+    var token = generateToken()
+    db.updateToken(req.body.username,token)
+    .then(data =>{
+      res.clearCookie('token')
+      res.cookie('token', token);
+      res.cookie('token', token, {maxAge: 3600000});
+      res.redirect('/')
+    })
   })
 })
 
@@ -86,11 +88,11 @@ app.post('/api/users/login', (req,res) =>{
         res.sendStatus(401);
       } else{
         var token = generateToken()
-        // console.log(token)
         db.updateToken(req.body.username,token)
         .then(data =>{
           res.clearCookie('token')
           res.cookie('token', token);
+          res.cookie('token', token, {maxAge: 3600000});
           res.redirect('/')
         })
       }

@@ -133,9 +133,6 @@ closeCreateAccount.addEventListener('click', event => {
   createaccount.style.display = 'none'
 })
 
-var query = window.location.search.substring(1);
-console.log(query)
-
 //Geralle's shit
 
 // var cookieParse = document.cookie.split(';')

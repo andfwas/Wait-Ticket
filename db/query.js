@@ -70,14 +70,6 @@ getUserByUserToken = (token) => {
   return db('users').first().where('token', token)
 }
 
-getCookieToken = (token) => {
-  console.log(res.cookie)
-}
-
-clearToken = () =>{
-  return db('users').select().update('token','')
-}
-
 module.exports = {
   getAllTickets,
   getAllUsers,
@@ -90,7 +82,5 @@ module.exports = {
   updateToken,
   generateToken,
   getUserByUserToken,
-  releaseToken,
-  getCookieToken,
-  clearToken
+  releaseToken
 }
