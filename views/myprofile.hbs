@@ -131,6 +131,27 @@
     <img src="orange-concert.jpg" class="img-fluid imgformatting" alt="crowded concert venue at night">
   </div>
 
+<div class ="scrollbar" id="style-13">
+  <div class="force-overflow">
+    <div class="row no-gutters">
+      <div class="col-3" id="searchFormatting">
+        {{#each tickets}}
+      <div>
+        <p class="textTitle">{{this.event}}</p>
+        <p class="venue">{{this.venue}}</p>
+        <p>{{this.location}}</p>
+        <p>{{this.date}}</p>
+        <p>{{this.time}}</p>
+      </div>
+      {{/each}}
+      </div>
+      <div class="col-9">
+        <div id='map'></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- FOOTER -->
 <nav class="navbar" id="foot-nav">waiTTicket &copy; 2017 - help@waiTTicket.com</nav>

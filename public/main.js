@@ -4,7 +4,6 @@ const form = document.getElementById('typeform')
 form.addEventListener('submit', (event) => {
   event.preventDefault()
   div.innerHTML =''
-  //console.log(event)
   let id2 = event.target[1].value
   let id1 = event.target[0].value
   getInfoByCategory(id2, id1)
@@ -16,17 +15,12 @@ getInfoByCategory = (id2, id1) => {
       return response.json()
     })
     .then((data) => {
-      //console.log(data)
-      //console.log(id2)
-      //console.log(id1)
-      //let event;
-
       for(let i in data) {
         let event = (data[i].event)
-        //console.log(event)
         let venue = (data[i].venue)
+        console.log(venue)
         let location = data[i].location
-         let date = data[i].date
+        let date = data[i].date
         let time = data[i].time
         createElement(event, venue, location, date, time)
       }
@@ -40,6 +34,7 @@ createElement = (event, venue, location, date, time) => {
   divCreate.className = 'event'
 
   let p = document.createElement('p')
+  p.className = 'textTitle'
   p.textContent = event
 
   let p2 = document.createElement('p')
@@ -60,7 +55,6 @@ createElement = (event, venue, location, date, time) => {
   divCreate.appendChild(p4)
   divCreate.appendChild(p5)
   div.appendChild(divCreate)
-//console.log(event)
 }
 
 
@@ -76,25 +70,88 @@ if(cookie.search('token') < 0){
 
 
 // MAP JS
+
+var url1 = 'https://galvanize-cors.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=39.7392,-104.9903&radius=10000&keyword='
+var url2 = '&key=AIzaSyCpvVaIU3KFri6ORGeukdz3TqFN_GRhXn0'
+
+
+const venue = document.getElementsByClassName('venue')
+let keywords = []
+
+for(let i = 0; i < venue.length; i++){
+  keywords.push(venue[i].textContent)
+}
+console.log(keywords);
+
+
+var urls = []
+
+function makeUrl(url1, url2, keywords) {
+	for (var i = 0; i < keywords.length; i++) {
+		urls.push(url1 + keywords[i] + url2)
+	}
+}
+makeUrl(url1, url2, keywords)
+
+//console.log(urls);
+
+
+var coords = []
+
+function makeCoords(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    fetch(arr[i])
+    	.then(function(response) {
+    		return response.json()
+    	})
+      .then(function(data) {
+        console.log(data)
+        coords.push(data.results["0"].geometry.location)
+      })
+  }
+  console.log(coords);
+}
+makeCoords(urls)
+
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 11,
+    zoom: 12,
     center: {lat: 39.7392, lng: -104.9903}
   });
-  var marker = new google.maps.Marker({
-    position: {lat: 39.7392, lng: -104.9903},
-    map: map
-  });
-  newMarkers(locations)
-  function newMarkers(locations) {
-    // for (var i = 0; i < locations.length; i++) {
+
+  function newMarkers(arr) {
+    for (var i = 0; i < arr.length; i++) {
       var marker = new google.maps.Marker({
-        position: {lat: 39.7392, lng: -104.9903},
+        position: arr[i],
         map: map
       })
-    // }
+    }
   }
+  newMarkers(coords)
 }
+
+
+
+
+// function initMap() {
+//   var map = new google.maps.Map(document.getElementById('map'), {
+//     zoom: 11,
+//     center: {lat: 39.7392, lng: -104.9903}
+//   });
+//   var marker = new google.maps.Marker({
+//     position: {lat: 39.7392, lng: -104.9903},
+//     map: map
+//   });
+//   newMarkers(locations)
+//   function newMarkers(locations) {
+//     // for (var i = 0; i < locations.length; i++) {
+//       var marker = new google.maps.Marker({
+//         position: {lat: 39.7392, lng: -104.9903},
+//         map: map
+//       })
+//     // }
+//   }
+// }
 
 //Lizz's new shit
 let loginButton = document.getElementById('loginButton')
@@ -154,9 +211,9 @@ if(cookie.search('token') < 0){
   $('#usersnameDisplay').show()
 }
 
-var dt = new Date();
-var logoutButton = document.getElementById('logoutButton')
-logoutButton.addEventListener('click',function(event){
-  document.cookie = `token=; expires=${dt}`;
-  location.reload()
-})
+// var dt = new Date();
+// var logoutButton = document.getElementById('logoutButton')
+// logoutButton.addEventListener('click',function(event){
+//   document.cookie = `token=; expires=${dt}`;
+//   location.reload()
+// })

@@ -12,8 +12,8 @@ getUserByUserName = (username) => {
   return db('users').first().where('username', username)
 }
 
-getTicketsByUserName = username => {
-  return db('tickets').where('username', username)
+getTicketsByUserId = user_id => {
+  return db('tickets').where('user_id', user_id)
 }
 
 getTicketsByType = (type, location) => {
@@ -74,7 +74,7 @@ module.exports = {
   getAllTickets,
   getAllUsers,
   getUserByUserName,
-  getTicketsByUserName,
+  getTicketsByUserId,
   getTicketsByType,
   addTicket,
   createAccount,
