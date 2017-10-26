@@ -96,12 +96,25 @@ getInfoByCategory = (idType, idLoc) => {
 // }
 
 // MAP JS
-mapboxgl.accessToken = 'pk.eyJ1IjoiYW5kZndhcyIsImEiOiJjajk1dHc0am40bzY5MzNtYm0yMWx3emdmIn0.DrIhBUV9hbyQvinhBYlDFg';
-var map = new mapboxgl.Map({
-container: 'map',
-style: 'mapbox://styles/mapbox/dark-v9'
-});
-
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 11,
+    center: {lat: 39.7392, lng: -104.9903}
+  });
+  var marker = new google.maps.Marker({
+    position: {lat: 39.7392, lng: -104.9903},
+    map: map
+  });
+  newMarkers(locations)
+  function newMarkers(locations) {
+    // for (var i = 0; i < locations.length; i++) {
+      var marker = new google.maps.Marker({
+        position: {lat: 39.7392, lng: -104.9903},
+        map: map
+      })
+    // }
+  }
+}
 
 //Lizz's new shit
 let loginButton = document.getElementById('loginButton')
@@ -142,3 +155,41 @@ closeCreateAccount.addEventListener('click', event => {
 
 var query = window.location.search.substring(1);
 console.log(query)
+
+//Geralle's shit
+
+// var cookieParse = document.cookie.split(';')
+// console.log(cookieParse)
+var cookie = document.cookie
+if(cookie.search('token') < 0){
+  // console.log('not logged in')
+  $('#logoutButton').hide()
+  $('#loginButton').show()
+  $('#myProfileButton').hide()
+  $('#addTicketButton').hide()
+  $('#usersnameDisplay').hide()
+}else{
+  // console.log('logged in')
+  $('#logoutButton').show()
+  $('#loginButton').hide()
+  $('#myProfileButton').show()
+  $('#addTicketButton').show()
+  $('#usersnameDisplay').show()
+}
+
+var dt = new Date();
+var logoutButton = document.getElementById('logoutButton')
+logoutButton.addEventListener('click',function(event){
+  document.cookie = `token=; expires=${dt}`;
+  location.reload()
+})
+
+var searchFormatting = document.getElementById('searchFormatting')
+searchFormatting.addEventListener('click',function(event){
+  // console.log(event)
+  var id = Number(event.target.id)
+  if(id !== NaN || id !== 0){
+    console.log(id)
+  }
+})
+Add Comment Collapse
