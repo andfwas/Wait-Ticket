@@ -10,7 +10,7 @@ form.addEventListener('submit', (event) => {
 })
 
 getInfoByCategory = (id2, id1) => {
-  fetch(`http://localhost:3000/api/tickets/type/${id2},${id1}`)
+  fetch(`http://waitticket.herokuapp.com/api/tickets/type/${id2},${id1}`)
     .then((response) => {
       return response.json()
     })
