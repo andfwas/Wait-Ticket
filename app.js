@@ -47,7 +47,8 @@ app.get('/api/tickets/:type,:location', (req, res) => {
   const type = req.params.type
   const location = req.params.location
   db.getTicketsByType(type, location)
-  .then(tickets => res.json(tickets))})
+  .then(tickets => res.json(tickets))
+})
 
 //App Post
 app.post('/api/tickets', (req,res) =>{
@@ -55,17 +56,19 @@ app.post('/api/tickets', (req,res) =>{
   .then(data => {
     res.sendStatus('201').json(data)
     getTicketToken()
-
-  var cookieToken = req.cookies['token']
-  db.getUserByUserToken(cookieToken)
-  .then(userInfo => {
-    console.log(userInfo.user_id)
-    // db.addTicket(req.body)
-    // .then(data => {
-    //   console.log(req.cookies['token'])
-    // })
   })
 })
+  // var cookieToken = req.cookies['token']
+  // db.getUserByUserToken(cookieToken)
+  // .then(userInfo => {
+  //   console.log(userInfo.user_id)
+  //   // db.addTicket(req.body)
+  //   // .then(data => {
+  //   //   console.log(req.cookies['token'])
+  //   // })
+  // })
+
+
 
 app.post('/api/users', (req,res) =>{
   db.createAccount(req.body)

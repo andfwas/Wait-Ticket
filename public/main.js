@@ -207,12 +207,4 @@ logoutButton.addEventListener('click',function(event){
   location.reload()
 })
 
-var searchFormatting = document.getElementById('searchFormatting')
-searchFormatting.addEventListener('click',function(event){
-  // console.log(event)
-  var id = Number(event.target.id)
-  if(id !== NaN || id !== 0){
-    console.log(id)
-  }
-})
-Add Comment Collapse
+}
