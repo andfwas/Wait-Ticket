@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-// console.log(document.cookie)
-// //
-// // var cookieParse = document.cookie.split(';')
-// // console.log(cookieParse)
-// var cookie = document.cookie
-// if(cookie.search('token') < 0){
-//   console.log('not logged in')
-// }else{
-//   console.log('logged in')
-// }
-=======
 let div = document.getElementById('searchFormatting')
 
 const form = document.getElementById('typeform')
@@ -18,7 +6,7 @@ form.addEventListener('submit', (event) => {
   div.innerHTML =''
   //console.log(event)
   let id2 = event.target[1].value
-  let id1 = event.target[0].value  
+  let id1 = event.target[0].value
   getInfoByCategory(id2, id1)
 })
 
@@ -42,7 +30,7 @@ getInfoByCategory = (id2, id1) => {
         let time = data[i].time
         createElement(event, venue, location, date, time)
       }
-  
+
     })
 
 
@@ -84,7 +72,6 @@ if(cookie.search('token') < 0){
 }else{
   console.log('logged in')
 }
->>>>>>> 8e413434ba0032abc72683e86e31df6389710670
 
 
 //
