@@ -133,9 +133,6 @@ closeCreateAccount.addEventListener('click', event => {
   createaccount.style.display = 'none'
 })
 
-var query = window.location.search.substring(1);
-console.log(query)
-
 //Geralle's shit
 
 // var cookieParse = document.cookie.split(';')
@@ -163,8 +160,3 @@ logoutButton.addEventListener('click',function(event){
   document.cookie = `token=; expires=${dt}`;
   location.reload()
 })
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 8a831aafd1fc3df63a3968b673dda9b8e952243b
