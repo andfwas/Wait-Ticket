@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/geralle/Wait-Ticket#readme",
   "dependencies": {
+    "@sendgrid/mail": "^6.1.4",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",
