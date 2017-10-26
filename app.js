@@ -23,7 +23,7 @@ app.use(methodOverride('_method'))
 
 app.use('/', index)
 app.use('/myprofile', myprofile)
-app.use('/accountcreate', accountcreate)
+
 
 // App Get Results
 app.get('/api/tickets', (req,res) => {
