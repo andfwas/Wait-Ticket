@@ -16,9 +16,8 @@ getTicketsByUserName = username => {
   return db('tickets').where('username', username)
 }
 
-getTicketsByType = (type, location) => {
-  return db('tickets').where(function() {this.where('type', type)
-  }).orWhere({location:location})
+getTicketsByType = (type) => {
+  return db('tickets').first().where('type', type)
 }
 
 addTicket = (data) => {
