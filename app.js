@@ -62,11 +62,11 @@ app.post('/api/tickets', (req,res) =>{
   var cookieToken = req.cookies['token']
   db.getUserByUserToken(cookieToken)
   .then(userInfo => {
-    console.log(userInfo.user_id)
-    // db.addTicket(req.body)
-    // .then(data => {
-    //   console.log(req.cookies['token'])
-    // })
+    // console.log(userInfo.user_id)
+    db.addTicket(req.body)
+    .then(data => {
+      res.redirect('/')
+    })
   })
 })
 
