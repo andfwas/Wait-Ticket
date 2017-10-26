@@ -1,0 +1,43 @@
+//
+// getInfo = (id) => {
+//     fetch(`http://localhost:3000/api/tickets/username/${id}`)
+//     .then((response) => {
+//         return response.json()
+//         .then((data) => {
+//             console.log(data)
+//             // search result #1
+//             var searchResult1 = document.getElementById('searchResult1')
+//             var eventName1 = document.createElement('p')
+//             var venueName1 = document.createElement('p')
+//             var date1 = document.createElement('p')
+//             var time1 = document.createElement('p')
+//
+//             eventName1.innerText = data[0].event
+//             venueName1.innerText = data[0].venue
+//             date1.innerText = data[0].date
+//             time1.innerText = data[0].time
+//
+//             searchResult1.append(eventName1)
+//             searchResult1.append(venueName1)
+//             searchResult1.append(date1)
+//             searchResult1.append(time1)
+//
+//             // search result #2
+//             var searchResult2 = document.getElementById('searchResult2')
+//             var eventName2 = document.createElement('p')
+//             var venueName2 = document.createElement('p')
+//             var date2 = document.createElement('p')
+//             var time2 = document.createElement('p')
+//
+//             eventName2.innerText = data[1].event
+//             venueName2.innerText = data[1].venue
+//             date2.innerText = data[1].date
+//             time2.innerText = data[1].time
+//
+//             searchResult2.append(eventName2)
+//             searchResult2.append(venueName2)
+//             searchResult2.append(date2)
+//             searchResult2.append(time2)
+//         })
+//     })
+// }
