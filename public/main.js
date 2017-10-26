@@ -322,3 +322,8 @@ logoutButton.addEventListener('click',function(event){
   document.cookie = `token=; expires=${dt}`;
   location.reload()
 })
+
+div.addEventListener('click',function(event){
+  console.log(event.target.id)
+  
+})
