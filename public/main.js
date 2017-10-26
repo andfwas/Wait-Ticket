@@ -32,7 +32,7 @@ getInfoByCategory = (id2, id1) => {
       }
   
     })
-}
+
 
 createElement = (event, venue, location, date, time) => {
   let divCreate = document.createElement('div')
@@ -60,6 +60,17 @@ createElement = (event, venue, location, date, time) => {
   divCreate.appendChild(p5)
   div.appendChild(divCreate)
 //console.log(event)
+}
+
+console.log(document.cookie)
+//
+// var cookieParse = document.cookie.split(';')
+// console.log(cookieParse)
+var cookie = document.cookie
+if(cookie.search('token') < 0){
+  console.log('not logged in')
+}else{
+  console.log('logged in')
 }
 
 

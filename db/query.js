@@ -23,7 +23,7 @@ getTicketsByType = (type, location) => {
     }).select('*')
 }
 
-addTicket = (data) => {
+addTicket = (data, userId) => {
   return db('tickets').insert(data)
 }
 
@@ -66,6 +66,10 @@ getTicketToken = (token) => {
   // console.log(query)
 }
 
+clearToken = () =>{
+  return db('users').select().update('token','')
+}
+
 module.exports = {
   getAllTickets,
   getAllUsers,
@@ -79,5 +83,6 @@ module.exports = {
   generateToken,
   getUserByUserToken,
   releaseToken,
-  getTicketToken
+  getTicketToken,
+  clearToken
 }

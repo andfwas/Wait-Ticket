@@ -41,6 +41,52 @@
 
   <!-- END OF POPUP -->
 
+
+  <!-- START OF MY TICKETS BOX -->
+  <div class="card" id="filterform">
+    <div class="card-header text-center">
+      <h4 class="card-title">The easiest way to get tickets to local events and shows at the last minute... FOR FREE!</h4>
+    </div>
+
+      <form id="typeform">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="location">Location</label>
+            <select class="form-control" name="location">
+              <option value="Choose">
+                Choose...
+              </option>
+              <option value="Denver, CO">
+                  Denver, CO
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="eventType">Event Type</label>
+            <select class="form-control" name="eventtype">
+              <option value="Choose">
+                Choose...
+              </option>
+              <option value="Music">
+                Music
+              </option>
+              <option value="Sports">
+                  Sports
+              </option>
+            </select>
+          </div>
+
+        </div>
+        	<button class="btn btn-success btn-block" id="submit-btn" type="submit">Filter Free Tickets</button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- END OF MY TICKET BOX -->
+
+
   <!-- BEGIN NAV -->
   <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="#"><img class="logo-img" src="wait-ticket-logos-v3.png" alt="waiTTicket logo"></a>
@@ -77,18 +123,6 @@
     </div>
   </nav>
   <!-- END NAV -->
-
-
-<!-- container with current tickets -->
-  <div class="row no-gutters">
-    <div class="col-3" id="searchFormatting">
-      <div id="searchResult1"></div>
-      <div id="searchResult2"></div>
-    </div>
-    <div class="col-9">
-      <div id='map'></div>
-    </div>
-  </div>
 
 
 <!-- FOOTER -->
