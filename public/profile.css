@@ -43,7 +43,7 @@ font-size: 150%;
 }
 
 /* scroll bar */
-.scrollbar {
+/*.scrollbar {
     background-color: white;
     float: left;
     height: 70%;
@@ -68,17 +68,26 @@ font-size: 150%;
     border-radius: 10px;
     background-color: rgb(213, 92, 90);
 
-}
+}*/
 
 /*end of scrollbar*/
 
+/*#ticket-container{
+  display: flex;
+  flex-direction: row;
+}*/
+
+/*#ticket-selection{
+  overflow: scroll;
+  height: 600px;
+}*/
 
 #mytickets {
-  width: 30rem;
+  width: 35rem;
   height: auto;
   position: absolute;
   left: 30vw;
-  top: 30vh;
+  top: 15vh;
   background-color: white;
   z-index: 1;
   border: 1px solid black;
@@ -86,7 +95,7 @@ font-size: 150%;
   box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
 }
 
-#loginform, #createaccount, #addticketform {
+#addticketform {
   display:none;
   width: 45rem;
   position: absolute;
@@ -99,17 +108,8 @@ font-size: 150%;
   box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
 }
 
-#loginform{
-  height: 30vh;
-}
-
-#createaccount{
-  height: 50vh;
-  padding: 30px;
-}
-
 #addticketform{
-  height: 65vh;
+  height: auto;
 }
 
 /*.wholePageDim{
@@ -130,9 +130,8 @@ font-size: 150%;
   background-color: white;
   color: #191816;
   line-height: 50%;
-  padding: 10px 10px 10px 10px;
-  border: 0.5px solid gray;
-  border-top: 0;
+  padding: 15px 10px 10px 10px;
+  margin-top: 10px;
 }
 
 #map {
