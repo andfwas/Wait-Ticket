@@ -1,13 +1,13 @@
-console.log(document.cookie)
-//
-// var cookieParse = document.cookie.split(';')
-// console.log(cookieParse)
-var cookie = document.cookie
-if(cookie.search('token') < 0){
-  console.log('not logged in')
-}else{
-  console.log('logged in')
-}
+// console.log(document.cookie)
+// //
+// // var cookieParse = document.cookie.split(';')
+// // console.log(cookieParse)
+// var cookie = document.cookie
+// if(cookie.search('token') < 0){
+//   console.log('not logged in')
+// }else{
+//   console.log('logged in')
+// }
 
 
 

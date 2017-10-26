@@ -22,7 +22,16 @@ getTicketsByType = (type, location) => {
 }
 
 addTicket = (data, userId) => {
-  return db('tickets').insert(data)
+  return db('tickets').insert({
+    event: data.event,
+    date: data.date,
+    time: data.time,
+    venue: data.venue,
+    location: data.location,
+    type: data.type,
+    pdf_link: data.pdf_link,
+    user_id: userId
+  })
 }
 
 createAccount = (data) => {
@@ -59,9 +68,8 @@ getUserByUserToken = (token) => {
   return db('users').first().where('token', token)
 }
 
-getTicketToken = (token) => {
-  // var query = window.location.search.substring(1);
-  // console.log(query)
+getCookieToken = (token) => {
+  console.log(res.cookie)
 }
 
 clearToken = () =>{
@@ -81,6 +89,6 @@ module.exports = {
   generateToken,
   getUserByUserToken,
   releaseToken,
-  getTicketToken,
+  getCookieToken,
   clearToken
 }

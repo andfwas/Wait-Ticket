@@ -57,11 +57,13 @@ app.post('/api/tickets', (req,res) =>{
   var cookieToken = req.cookies['token']
   db.getUserByUserToken(cookieToken)
   .then(userInfo => {
-    console.log(userInfo.user_id)
-    // db.addTicket(req.body)
-    // .then(data => {
-    //   console.log(req.cookies['token'])
-    // })
+    var ticketUserId = userInfo.id
+    // console.log(userInfo.id)
+    db.addTicket(req.body, ticketUserId)
+    .then(data => {
+      // console.log(req.cookies['token'])
+      res.redirect('/myprofile')
+    })
   })
 })
 
@@ -91,6 +93,7 @@ app.post('/api/users/login', (req,res) =>{
         .then(data =>{
           res.clearCookie('token')
           res.cookie('token', token);
+          // res.cookie('token', token, {maxAge: 10000});
           res.redirect('/')
         })
       }
