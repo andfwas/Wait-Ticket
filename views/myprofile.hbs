@@ -40,6 +40,8 @@
       </form>
     </div>
 
+
+
   <!-- END OF POPUP -->
 
 
@@ -50,39 +52,23 @@
     </div>
     <div class="card-body">
 
-      <form id="typeform">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="location">Location</label>
-            <select class="form-control" name="location">
-              <option value="Choose">
-                Choose...
-              </option>
-              <option value="Denver, CO">
-                  Denver, CO
-              </option>
-            </select>
+      <div class="scrollbar" id="style-13">
+        <div class="force-overflow">
+          <div class="row no-gutters">
+            <div class="col-3" id="searchFormatting">
+              {{#each tickets}}
+              <div>
+                <p class="textTitle">{{this.event}}</p>
+                <p class="venue">{{this.venue}}</p>
+                <p>{{this.location}}</p>
+                <p>{{this.date}}</p>
+                <p>{{this.time}}</p>
+              </div>
+              {{/each}}
+            </div>
           </div>
-
-          <div class="form-group col-md-6">
-            <label for="eventType">Event Type</label>
-            <select class="form-control" name="eventtype">
-              <option value="Choose">
-                Choose...
-              </option>
-              <option value="Music">
-                Music
-              </option>
-              <option value="Sports">
-                  Sports
-              </option>
-            </select>
-          </div>
-
         </div>
-        	<button class="btn btn-success btn-block" id="submit-btn" type="submit">Filter Free Tickets</button>
-        </form>
-
+      </div>
 
     </div>
   </div>
