@@ -11,19 +11,19 @@ form.addEventListener('submit', (event) => {
 })
 
 getInfoByCategory = (id2, id1) => {
-  fetch(`http://localhost:3000/api/tickets/type/${id2}?location=${id1}`)
+  fetch(`http://localhost:3000/api/tickets/${id2},${id1}`)
     .then((response) => {
       return response.json()
     })
     .then((data) => {
-      console.log(data)
-      console.log(id2)
-      console.log(id1)
+      //console.log(data)
+      //console.log(id2)
+      //console.log(id1)
       //let event;
 
       for(let i in data) {
-        let event = (data.event)
-        console.log(event)
+        let event = (data[i].event)
+        //console.log(event)
         let venue = (data[i].venue)
         let location = data[i].location
          let date = data[i].date

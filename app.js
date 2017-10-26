@@ -53,7 +53,7 @@ app.get('/api/tickets/:type,:location', (req, res) => {
 app.post('/api/tickets', (req,res) =>{
   db.addTicket(req.body)
   .then(data => {
-    res.json(data)
+    res.sendStatus('201').json(data)
     getTicketToken()
 
   })
