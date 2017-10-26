@@ -6,7 +6,7 @@ form.addEventListener('submit', (event) => {
   div.innerHTML =''
   //console.log(event)
   let id2 = event.target[1].value
-  let id1 = event.target[0].value  
+  let id1 = event.target[0].value
   getInfoByCategory(id2, id1)
 })
 
@@ -30,7 +30,7 @@ getInfoByCategory = (id2, id1) => {
         let time = data[i].time
         createElement(event, venue, location, date, time)
       }
-  
+
     })
 
 
