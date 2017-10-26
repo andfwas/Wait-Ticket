@@ -85,34 +85,33 @@
 
   <!-- START OF ADD TICKET POPUP -->
 <div class="card">
-  <div class="card-body">
-    <div id="addticketform">
-      <form action="/api/tickets" method="post">
-        <p class="closeform">X</p>
-        <label>Event Title</label>
-        <input class="form-control" id="event_title" name="event"> <label>Date</label>
-        <input class="form-control" id="form_date" name="date">
-        <label>Time</label>
-        <input class="form-control" id="form_time" name="time"> <label>Venue</label>
-        <input class="form-control" id="form_venue" name="venue">
-        <label>Location</label>
-        <input class="form-control" id="form_location" name="location">
-        <select class="form-control" name="type">
-          <option value="Select Type">
-            Choose...
-          </option>
-          <option value="Music">
-              Music
-          </option>
-          <option value="Sports">
-              Sports
-          </option>
-        </select>
-        <label>Ticket Link</label>
-        <input class="form-control" name="pdf_link">
-        <button class="btn btn-success btn-block" id="submit-btn" type="submit">Submit</button>
-      </form>
-    </div>
+  <div id="addticketform">
+    <form action="/api/tickets" method="post">
+      <p class="closeform">X</p>
+      <label>Event Title</label>
+      <input class="form-control" id="event_title" name="event"> <label>Date</label>
+      <input class="form-control" id="form_date" name="date">
+      <label>Time</label>
+      <input class="form-control" id="form_time" name="time"> <label>Venue</label>
+      <input class="form-control" id="form_venue" name="venue">
+      <label>Location</label>
+      <input class="form-control" id="form_location" name="location">
+      <label>Select Event Type</label>
+      <select class="form-control" name="type">
+        <option value="Select Type">
+          Choose...
+        </option>
+        <option value="Music">
+            Music
+        </option>
+        <option value="Sports">
+            Sports
+        </option>
+      </select>
+      <label>Ticket Link</label>
+      <input class="form-control" name="pdf_link">
+      <button class="btn btn-success btn-block" id="submit-btn" type="submit">Submit</button>
+    </form>
   </div>
 </div>
   <!-- END OF POPUP -->
@@ -141,7 +140,7 @@
 
   <!-- BEGIN NAV -->
   <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#"><img class="logo-img" src="wait-ticket-logos-v3.png" alt="waiTTicket logo"></a>
+    <a class="navbar-brand" href="/"><img class="logo-img" src="wait-ticket-logos-v3.png" alt="waiTTicket logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -151,27 +150,14 @@
         <li class="nav-item active">
           <a class="nav-link addticketformButton">Add Ticket<span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
+      
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <button id="loginButton" class="btn btn-outline-light my-2 my-sm-0" type="submit">Login</button>
       </form>
-      <form class="form-inline my-2 my-lg-0">
+      <a href="/myprofile">
         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">My Profile</button>
-      </form>
+      </a>
     </div>
   </nav>
   <!-- END NAV -->
