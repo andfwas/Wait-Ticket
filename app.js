@@ -43,17 +43,19 @@ app.get('/api/tickets/username/:username', (req, res) => {
   .then(tickets => res.json(tickets))
 })
 
-app.get('/api/tickets/type/:type,:location', (req, res) => {
+app.get('/api/tickets/:type,:location', (req, res) => {
   const type = req.params.type
   const location = req.params.location
-  //console.log(type)
-  //console.log(location)
-  db.getTicketsByType(type,location)
-  .then(tickets => res.json(tickets))
-})
+  db.getTicketsByType(type, location)
+  .then(tickets => res.json(tickets))})
 
 //App Post
 app.post('/api/tickets', (req,res) =>{
+  db.addTicket(req.body)
+  .then(data => {
+    res.sendStatus('201').json(data)
+    getTicketToken()
+
   var cookieToken = req.cookies['token']
   db.getUserByUserToken(cookieToken)
   .then(userInfo => {
