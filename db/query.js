@@ -12,8 +12,8 @@ getUserByUserName = (username) => {
   return db('users').first().where('username', username)
 }
 
-getTicketsByUserId = user_id => {
-  return db('tickets').where('user_id', user_id)
+getTicketsByUserId = id => {
+  return db('tickets').where('user_id', id)
 }
 
 getTicketsByType = (type, location) => {
