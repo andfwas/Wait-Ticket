@@ -28,13 +28,13 @@ body {
 }
 
 .btn-success {
-  background-color: #283593;
-  border-color: #283593;
+  background-color: #8D3300;
+  border-color: #8D3300;
 }
 
 .btn-success:hover {
-  background-color: #231766;
-  border-color: #231766;
+  background-color: #5A2100;
+  border-color: #5A2100;
 }
 
 #filterform {
@@ -88,14 +88,13 @@ body {
   padding: 50px;
 }
 
-#searchFormatting {
-  color: white;
 
-}
-
-#searchResult1, #searchResult2 {
+#searchFormatting div {
   background-color: white;
   color: #191816;
+  line-height: 50%;
+  padding: 10px 10px 10px 10px;
+  border: 0.5px solid gray;
 }
 
 #map {
