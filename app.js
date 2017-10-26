@@ -43,29 +43,25 @@ app.get('/api/tickets/username/:username', (req, res) => {
   .then(tickets => res.json(tickets))
 })
 
-app.get('/api/tickets/:type,:location', (req, res) => {
+app.get('/api/tickets/type/:type,:location', (req, res) => {
   const type = req.params.type
   const location = req.params.location
-  db.getTicketsByType(type, location)
-  .then(tickets => res.json(tickets))})
+  //console.log(type)
+  //console.log(location)
+  db.getTicketsByType(type,location)
+  .then(tickets => res.json(tickets))
+})
 
 //App Post
 app.post('/api/tickets', (req,res) =>{
-  db.addTicket(req.body)
-  .then(data => {
-    res.sendStatus('201').json(data)
-    getTicketToken()
-
   var cookieToken = req.cookies['token']
   db.getUserByUserToken(cookieToken)
   .then(userInfo => {
-    var ticketUserId = userInfo.id
-    // console.log(userInfo.id)
-    db.addTicket(req.body, ticketUserId)
-    .then(data => {
-      // console.log(req.cookies['token'])
-      res.redirect('/myprofile')
-    })
+    console.log(userInfo.user_id)
+    // db.addTicket(req.body)
+    // .then(data => {
+    //   console.log(req.cookies['token'])
+    // })
   })
 })
 
@@ -95,7 +91,6 @@ app.post('/api/users/login', (req,res) =>{
         .then(data =>{
           res.clearCookie('token')
           res.cookie('token', token);
-          // res.cookie('token', token, {maxAge: 10000});
           res.redirect('/')
         })
       }
