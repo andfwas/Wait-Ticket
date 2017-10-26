@@ -1,50 +1,65 @@
+let div = document.getElementById('searchFormatting')
 
-
-
-
-
-// const form2 = document.getElementById('createaccount')
-// form2.addEventListener('submit', (event) => {
-//     event.preventDefault()
-//
-//     let id = event.target.elements.username.value
-//     console.log(id)
-//     getInfo(id)
-// })
-//
 const form = document.getElementById('typeform')
-form.addEventListener('change', (event) => {
-    event.preventDefault()
-
-    let id = event.target.name
-
-    let idLoc;
-    let idType;
-
-    if(id === 'location') {
-      idLoc = event.target.value
-    }
-    else if(id === 'eventtype') {
-      idType = event.target.value
-    }
-
-    //console.log(idType)
-    getInfoByCategory(idType,idLoc)
+form.addEventListener('submit', (event) => {
+  event.preventDefault()
+  div.innerHTML =''
+  //console.log(event)
+  let id2 = event.target[1].value
+  let id1 = event.target[0].value  
+  getInfoByCategory(id2, id1)
 })
 
-getInfoByCategory = (idType, idLoc) => {
-  fetch(`http://localhost:3000/api/tickets/type/${idType},${idLoc}`)
-  .then((response) => {
-    return response.json()
-  })
-  .then((data) => {
-let venue = []
-    for(let i in data){
-      console.log(typeof data[i].venue)
-      
-    }
-   
-  })
+getInfoByCategory = (id2, id1) => {
+  fetch(`http://localhost:3000/api/tickets/type/${id2},${id1}`)
+    .then((response) => {
+      return response.json()
+    })
+    .then((data) => {
+      console.log(data)
+      console.log(id2)
+      console.log(id1)
+      //let event;
+
+      for(let i in data) {
+        let event = (data[i].event)
+        //console.log(event)
+        let venue = (data[i].venue)
+        let location = data[i].location
+         let date = data[i].date
+        let time = data[i].time
+        createElement(event, venue, location, date, time)
+      }
+  
+    })
+}
+
+createElement = (event, venue, location, date, time) => {
+  let divCreate = document.createElement('div')
+  divCreate.className = 'event'
+
+  let p = document.createElement('p')
+  p.textContent = event
+
+  let p2 = document.createElement('p')
+  p2.textContent = venue
+
+  let p3 = document.createElement('p')
+  p3.textContent = location
+
+  let p4 = document.createElement('p')
+  p4.textContent = date
+
+  let p5 = document.createElement('p')
+  p5.textContent = time
+
+  divCreate.appendChild(p)
+  divCreate.appendChild(p2)
+  divCreate.appendChild(p3)
+  divCreate.appendChild(p4)
+  divCreate.appendChild(p5)
+  div.appendChild(divCreate)
+//console.log(event)
 }
 
 
@@ -95,8 +110,8 @@ let venue = []
 // MAP JS
 mapboxgl.accessToken = 'pk.eyJ1IjoiYW5kZndhcyIsImEiOiJjajk1dHc0am40bzY5MzNtYm0yMWx3emdmIn0.DrIhBUV9hbyQvinhBYlDFg';
 var map = new mapboxgl.Map({
-container: 'map',
-style: 'mapbox://styles/mapbox/dark-v9'
+  container: 'map',
+  style: 'mapbox://styles/mapbox/dark-v9'
 });
 
 
