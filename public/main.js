@@ -11,7 +11,7 @@ form.addEventListener('submit', (event) => {
 })
 
 getInfoByCategory = (id2, id1) => {
-  fetch(`http://localhost:3000/api/tickets/${id2},${id1}`)
+  fetch(`http://localhost:3000/api/tickets/type/${id2},${id1}`)
     .then((response) => {
       return response.json()
     })
@@ -32,6 +32,7 @@ getInfoByCategory = (id2, id1) => {
       }
 
     })
+  }
 
 
 createElement = (event, venue, location, date, time) => {
@@ -207,4 +208,4 @@ logoutButton.addEventListener('click',function(event){
   location.reload()
 })
 
-}
+
