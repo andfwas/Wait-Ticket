@@ -73,23 +73,12 @@ font-size: 150%;
 /*end of scrollbar*/
 
 
-#filterform {
+#mytickets {
   width: 30rem;
+  height: auto;
   position: absolute;
-  right: 5rem;
-  top: 10rem;
-  background-color: white;
-  z-index: 1;
-  border: 1px solid black;
-  border-radius: 5px;
-  box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
-}
-
-#profileform {
-  width: 30rem;
-  position: absolute;
-  left: 5rem;
-  top: 10rem;
+  left: 30vw;
+  top: 30vh;
   background-color: white;
   z-index: 1;
   border: 1px solid black;
