@@ -78,7 +78,7 @@ font-size: 150%;
   height: auto;
   position: absolute;
   left: 30vw;
-  top: 30vh;
+  top: 15vh;
   background-color: white;
   z-index: 1;
   border: 1px solid black;
@@ -86,7 +86,7 @@ font-size: 150%;
   box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
 }
 
-#loginform, #createaccount, #addticketform {
+#addticketform {
   display:none;
   width: 45rem;
   position: absolute;
@@ -99,17 +99,8 @@ font-size: 150%;
   box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
 }
 
-#loginform{
-  height: 30vh;
-}
-
-#createaccount{
-  height: 50vh;
-  padding: 30px;
-}
-
 #addticketform{
-  height: 65vh;
+  height: auto;
 }
 
 /*.wholePageDim{
