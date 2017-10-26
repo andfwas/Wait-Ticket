@@ -55,11 +55,11 @@
     <div class="card-body">
 
       <div class="scrollbar" id="style-13">
-        <div class="force-overflow">
-          <div class="row no-gutters">
-            <div class="col-3" id="searchFormatting">
+        <div class="force-overflow" id="ticket-container">
+          <div class="row no-gutters" id="ticket-selection">
+            <div class="col-12" id="searchFormatting">
               {{#each tickets}}
-              <div>
+              <div class="border border-secondary">
                 <p class="textTitle">{{this.event}}</p>
                 <p class="venue">{{this.venue}}</p>
                 <p>{{this.location}}</p>
@@ -95,12 +95,6 @@
           </a>
         </li>
       </ul>
-      <!-- <form class="form-inline my-2 my-lg-0">
-        <button id="loginButton" class="btn btn-outline-light my-2 my-sm-0" type="submit">Login PROFILE PAGE</button>
-      </form> -->
-      <!-- <form class="form-inline my-2 my-lg-0">
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">My Profile</button>
-      </form> -->
       <div id="usersnameDisplay">Hi, {{name}}</div>
       <button id="logoutButton" class="btn btn-outline-light my-2 my-sm-0" type="button">Logout</button>
     </div>
