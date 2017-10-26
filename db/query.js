@@ -70,6 +70,15 @@ getUserByUserToken = (token) => {
   return db('users').first().where('token', token)
 }
 
+updateUserData = (username, data) => {
+  return db('users').select().update({
+    name: data.name,
+    email: data.email,
+    username: data.username,
+    password: data.password
+  }).where('username',username)
+}
+
 module.exports = {
   getAllTickets,
   getAllUsers,
@@ -82,5 +91,6 @@ module.exports = {
   updateToken,
   generateToken,
   getUserByUserToken,
-  releaseToken
+  releaseToken,
+  updateUserData
 }

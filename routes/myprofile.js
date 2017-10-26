@@ -13,4 +13,15 @@ router.get('/', (req, res, next) => {
   })
 })
 
+router.get('/', (req, res, next)=>{
+  var token = req.cookies['token']
+  db.getUserByUserToken(token)
+  .then(user =>{
+    res.render('myprofile',{
+        title: "waitticket",
+        name: user.name
+      })
+    })
+  })
+
 module.exports = router;

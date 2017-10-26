@@ -148,15 +148,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link addticketformButton">Add Ticket<span class="sr-only">(current)</span></a>
+          <a id="addTicketButton" class="nav-link addticketformButton">Add Ticket<span class="sr-only">(current)</span></a>
         </li>
-      
+
       </ul>
       <form class="form-inline my-2 my-lg-0">
+        <div id="usersnameDisplay">Hi, {{name}}</div>
         <button id="loginButton" class="btn btn-outline-light my-2 my-sm-0" type="submit">Login</button>
       </form>
+      <button id="logoutButton" class="btn btn-outline-light my-2 my-sm-0" type="button">Logout</button>
       <a href="/myprofile">
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">My Profile</button>
+        <button id="myProfileButton" class="btn btn-outline-light my-2 my-sm-0" type="submit">My Profile</button>
       </a>
     </div>
   </nav>
@@ -169,10 +171,9 @@
 
 
 <!-- container with search results and map -->
-<div class ="scrollbar" id="style-13">
-  <div class="force-overflow">
-    <div class="row no-gutters">
-      <div class="col-3" id="searchFormatting">
+  <div class="force-overflow" id="ticket-container">
+    <div class="row no-gutters" id="ticket-selection">
+      <div class="" id="searchFormatting">
         {{#each tickets}}
       <div>
         <p class="textTitle">{{this.event}}</p>
@@ -183,12 +184,13 @@
       </div>
       {{/each}}
       </div>
-      <div class="col-9">
-        <div id='map'></div>
-      </div>
+    </div>
+    <div class="col-9">
+      <div id='map'></div>
     </div>
   </div>
-</div>
+
+
 
 <!-- FOOTER -->
 <nav class="navbar" id="foot-nav">waiTTicket &copy; 2017 - help@waiTTicket.com</nav>
