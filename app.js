@@ -43,23 +43,11 @@ app.get('/api/tickets/username/:username', (req, res) => {
   .then(tickets => res.json(tickets))
 })
 
-app.get('/api/tickets/type/:type', (req, res) => {
+app.get('/api/tickets/:type,:location', (req, res) => {
   const type = req.params.type
-  const location = req.query.location
-  console.log(type)
-  console.log(location)
-  db.getTicketsByType(type)
-  .then(tickets => {
-    if(!tickets) {
-      res.sendStatus(404);
-    } else if(tickets.location !== location){
-      res.sendStatus(404)
-    } else {
-      res.json(tickets)
-    }
-  })  
- //console.log(tickets)
-})
+  const location = req.params.location
+  db.getTicketsByType(type, location)
+  .then(tickets => res.json(tickets))})
 
 //App Post
 app.post('/api/tickets', (req,res) =>{
