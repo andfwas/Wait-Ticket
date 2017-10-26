@@ -11,7 +11,7 @@ router.get('/', (req, res, next) => {
    
     db.getTicketsByUserId(user.id)
     .then((tickets) => {
-      console.log(tickets)
+      //console.log(tickets)
       res.render('myprofile',{
         tickets: tickets
        })
