@@ -173,16 +173,16 @@
 <!-- container with search results and map -->
   <div class="force-overflow" id="ticket-container">
     <div class="row no-gutters" id="ticket-selection">
-      <div class="" id="searchFormatting">
-        {{#each tickets}}
-      <div>
-        <p class="textTitle">{{this.event}}</p>
-        <p class="venue">{{this.venue}}</p>
-        <p>{{this.location}}</p>
-        <p>{{this.date}}</p>
-        <p>{{this.time}}</p>
-        <button class="btn btn-sm" id="{{this.id}}">Get Ticket</button>
-      </div>
+      <div class="ticket-card-container" id="searchFormatting">
+      {{#each tickets}}
+        <div id="ticket-card-{{this.id}}">
+          <p class="textTitle">{{this.event}}</p>
+          <p class="venue">{{this.venue}}</p>
+          <p>{{this.location}}</p>
+          <p>{{this.date}}</p>
+          <p>{{this.time}}</p>
+          <button class="btn btn-sm" id="ticket-button-{{this.id}}">Get Ticket</button>
+        </div>
       {{/each}}
       </div>
     </div>

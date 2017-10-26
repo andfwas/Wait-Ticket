@@ -211,9 +211,9 @@ if(cookie.search('token') < 0){
   $('#usersnameDisplay').show()
 }
 
-// var dt = new Date();
-// var logoutButton = document.getElementById('logoutButton')
-// logoutButton.addEventListener('click',function(event){
-//   document.cookie = `token=; expires=${dt}`;
-//   location.reload()
-// })
+var dt = new Date();
+var logoutButton = document.getElementById('logoutButton')
+logoutButton.addEventListener('click',function(event){
+  document.cookie = `token=; expires=${dt}`;
+  location.reload()
+})
