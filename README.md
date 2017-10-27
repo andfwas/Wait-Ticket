@@ -57,3 +57,8 @@
 
 ## LINK TO Walk-Through Video
 * https://youtu.be/cbvOfVuPX5E
+
+## To Use:
+* Install all dependencies: npm install
+* Be sure to work off of the TEST BRANCH
+
