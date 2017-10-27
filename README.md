@@ -55,7 +55,7 @@
 * Social linking feature (view history of successful ticket exchanges p2p)
 * Event awareness
 
-## LINK TO Walk-Through Video
+## Link To Walk-Through Video
 * https://youtu.be/cbvOfVuPX5E
 
 ## To Use:
